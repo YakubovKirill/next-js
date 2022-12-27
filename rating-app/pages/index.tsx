@@ -14,8 +14,10 @@ function Home() {
       </Head>
 
       <main>
-        <h1 className='font-semibold'>Hello from next js</h1>
-        <p className='font-light'>sdfsdfsdf</p>
+        <h1 className='font-bold text-xl'>Hello from next js</h1>
+        <p className="font-light tracking-normal text-sm">There is some text</p>
+        <p className="font-light tracking-wide text-base">There is some text</p>
+        <p className="font-light tracking-widest text-lg">There is some text</p>
       </main>
     </>
   )
