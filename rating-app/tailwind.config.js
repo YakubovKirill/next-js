@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {},
     letterSpacing: {
+      small: '.025em',
       normal: '.05em',
       wide: '.1em',
       widest: '.2em',
@@ -15,7 +16,8 @@ module.exports = {
       sm: ['14px', '20px'],
       base: ['16px', '24px'],
       lg: ['20px', '28px'],
-      xl: ['24px', '32px'],
+      lgg: ['24px', '32px'],
+      xl: ['28px', '36px'],
     }
   },
   plugins: [],
