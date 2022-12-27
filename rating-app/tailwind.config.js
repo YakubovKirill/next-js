@@ -13,11 +13,12 @@ module.exports = {
       widest: '.2em',
     },
     fontSize: {
-      sm: ['14px', '20px'],
+      small: ['14px', '20px'],
       base: ['16px', '24px'],
-      lg: ['20px', '28px'],
-      lgg: ['24px', '32px'],
-      xl: ['28px', '36px'],
+      medium: ['18px', '28px'],
+      large: ['20px', '32px'],
+      lgg: ['24px', '36px'],
+      xl: ['28px', '40px'],
     }
   },
   plugins: [],
