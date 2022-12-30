@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import { memo } from 'react'
 import Htag from '../components/ReusableComponents/Htag/Htag'
+import Rating from '../components/Rating/Rating'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,8 @@ function Home() {
         <Htag tag='h1'> Some text</Htag>
         <Htag tag='h2'> Some text</Htag>
         <Htag tag='h3'> Some text</Htag>
+
+        <Rating rating={3} />
       </main>
     </>
   )
