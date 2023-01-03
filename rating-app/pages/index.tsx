@@ -3,6 +3,7 @@ import { Inter } from '@next/font/google'
 import { memo, useState } from 'react'
 import Htag from '../components/ReusableComponents/Htag/Htag'
 import Rating from '../components/Rating/Rating'
+import { withLayout } from '../layout/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,4 +33,4 @@ function Home() {
   )
 };
 
-export default memo(Home);
+export default memo(withLayout(Home));
