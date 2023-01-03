@@ -6,16 +6,14 @@ import Footer from "./Footer/Footer";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
     return (
-        <>
-            <Header />
+        <div className="grid grid-cols-layout min-h-screen grid-rows-layout sm:grid-cols-1">
+            <Header className="col-span-full desktop:hidden" />
+            <Sidebar className="sm:hidden" />
             <div>
-                <Sidebar />
-                <div>
-                    {children}
-                </div>
+                {children}
             </div>
-            <Footer />
-        </>
+            <Footer className="col-span-full" />
+        </div>
     )
 }
 
