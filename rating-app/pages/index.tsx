@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import Htag from '../components/ReusableComponents/Htag/Htag'
 import Rating from '../components/Rating/Rating'
 
 const inter = Inter({ subsets: ['latin'] })
 
 function Home() {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <>
       <Head>
@@ -24,7 +26,7 @@ function Home() {
         <Htag tag='h2'> Some text</Htag>
         <Htag tag='h3'> Some text</Htag>
 
-        <Rating rating={3} />
+        <Rating rating={rating} isEditable setRating={setRating} />
       </main>
     </>
   )

@@ -6,6 +6,7 @@ export interface RatingProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEle
     setRating?: (rating: number) => void,
 }
 
-export interface StarProps {
+export interface StarProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     filled: boolean,
+    isHover?: boolean,
 }
