@@ -4,10 +4,12 @@ import { memo, useState } from 'react'
 import Htag from '../components/ReusableComponents/Htag/Htag'
 import Rating from '../components/Rating/Rating'
 import { withLayout } from '../layout/Layout'
+import { GetStaticProps } from 'next'
+import axios from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 
-function Home() {
+function Home({ pokemon, menu }: HomeProps) {
   const [rating, setRating] = useState<number>(4);
 
   return (
@@ -34,3 +36,26 @@ function Home() {
 };
 
 export default memo(withLayout(Home));
+
+export const getStaticProps: GetStaticProps = async () => {
+  const firstCategory = 0;
+  const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon/ditto").then(data => data);
+  const { data: menu } = await axios.post("https://courses-top.ru/api/top-page/find", {
+    firstCategory
+  });
+  const pokemon = data.name;
+
+  return {
+    props: {
+      pokemon,
+      menu,
+      firstCategory,
+    }
+  }
+}
+
+interface HomeProps extends Record<string, unknown> {
+  pokemon: string,
+  menu: any[],
+  firstCategory: number,
+}
