@@ -8,13 +8,16 @@ const Footer = ({ ...props }: FooterProps): JSX.Element => {
         AppColor.PRIMARY,
         "col-span-full",
         "px-6",
+        "sm:px-4",
         "py-7",
+        "sm:py-4",
         "grid",
         "grid-cols-footer",
         "gap-[40px]",
         "text-base",
         "sm:grid-cols-1",
-        "sm:gap-[10px]"
+        "sm:gap-[10px]",
+        "tracking-normal"
     ].join(' ');
     return (
         <footer {...props} className={style}>
