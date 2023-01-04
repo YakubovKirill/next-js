@@ -7,12 +7,12 @@ import Footer from "./Footer/Footer";
 const Layout = ({ children }: LayoutProps): JSX.Element => {
     return (
         <div className="grid grid-cols-layout min-h-screen grid-rows-layout sm:grid-cols-1">
-            <Header className="col-span-full desktop:hidden" />
+            <Header className="col-span-full" />
             <Sidebar className="sm:hidden" />
             <div>
                 {children}
             </div>
-            <Footer className="col-span-full" />
+            <Footer />
         </div>
     )
 }
