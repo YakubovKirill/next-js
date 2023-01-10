@@ -3,6 +3,8 @@ import { LayoutProps } from "./Layout.props";
 import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import { AppContextProvider } from "../context/AppContextProvider";
+import { IAppContext } from "../context";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
     return (
@@ -17,12 +19,14 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     )
 }
 
-export const withLayout = <T extends Record<string, unknown>>(Component: React.FC<T> ) => {
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: React.FC<T> ) => {
     return function withLayoutComponent(props: T) {
         return (
-            <Layout>
-                <Component {...props} />
-            </Layout>
+            <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+                <Layout>
+                    <Component {...props} />
+                </Layout>
+            </AppContextProvider>
         )
     }
 }
