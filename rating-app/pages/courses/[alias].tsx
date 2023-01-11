@@ -11,7 +11,6 @@ const firstCategory = 0;
 
 function Course(props: CourseProps) {
   const { menu, page, products } = props;
-
   return (
     <>
       {products && products.length}
